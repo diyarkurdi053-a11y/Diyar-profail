@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noindex, nofollow">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://api.whatsapp.com https://t.me https://www.facebook.com mailto:;">
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="Diyar Luqman Kurdi - Personal Profile">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Diyar Luqman Kurdi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            position: relative;
+            overflow-x: hidden;
+            will-change: transform;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveBackground 20s linear infinite;
+            pointer-events: none;
+        }
+        
+        @keyframes moveBackground {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            will-change: transform, opacity;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+            animation: pulse 2s ease-in-out infinite;
+            border: 5px solid white;
+            will-change: transform;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        h1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 2em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+        
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 18px;
+            border-radius: 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 0.95em;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            will-change: transform;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+        }
+        
+        .social-btn:hover {
+            transform: translateY(-5px) translateZ(0);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .social-btn:active {
+            transform: translateY(-2px) translateZ(0);
+        }
+        
+        .social-btn {
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            touch-action: manipulation;
+        }
+        
+        .facebook {
+            background: linear-gradient(135deg, #1877f2 0%, #0c63d4 100%);
+        }
+        
+        .telegram {
+            background: linear-gradient(135deg, #0088cc 0%, #006699 100%);
+        }
+        
+        .viber {
+            background: linear-gradient(135deg, #7360f2 0%, #5a4bc7 100%);
+        }
+        
+        .whatsapp {
+            background: linear-gradient(135deg, #25d366 0%, #1fa855 100%);
+        }
+        
+        .email {
+            background: linear-gradient(135deg, #ea4335 0%, #c5221f 100%);
+        }
+        
+        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .contact-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 18px;
+            border-radius: 15px;
+            color: white;
+        }
+        
+        .contact-box h3 {
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+        
+        .contact-link {
+            color: white;
+            text-decoration: none;
+            font-size: 1.3em;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: opacity 0.3s ease;
+            display: block;
+        }
+        
+        .contact-link:hover {
+            opacity: 0.8;
+        }
+        
+        .icon {
+            font-size: 1.4em;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .card {
+                padding: 30px 20px;
+                border-radius: 20px;
+            }
+            
+            .avatar {
+                width: 100px;
+                height: 100px;
+                font-size: 2.5em;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+            }
+            
+            .subtitle {
+                font-size: 1em;
+            }
+            
+            .social-links {
+                gap: 10px;
+            }
+            
+            .social-btn {
+                padding: 12px 15px;
+                font-size: 0.9em;
+                gap: 6px;
+            }
+            
+            .icon {
+                font-size: 1.3em;
+            }
+            
+            .contact-box {
+                padding: 15px;
+            }
+            
+            .contact-link {
+                font-size: 1.1em;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            body {
+                padding: 10px;
+            }
+            
+            .card {
+                padding: 25px 15px;
+            }
+            
+            .avatar {
+                width: 90px;
+                height: 90px;
+                font-size: 2.2em;
+            }
+            
+            h1 {
+                font-size: 1.4em;
+            }
+            
+            .social-links {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .social-btn {
+                padding: 14px;
+            }
+        }
+        
+        @media (min-width: 601px) and (max-width: 900px) {
+            .card {
+                padding: 50px 40px;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+        }
+        
+        /* Performance Optimizations */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="avatar">👨‍💼</div>
+        <h1>Diyar Luqman Kurdi</h1>
+        <p class="subtitle">بەخێرهاتن بۆ پەڕەی کەسیم</p>
+        
+        <div class="social-links">
+            <a href="https://www.facebook.com/share/1Fs2Eyrwpm/" class="social-btn facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <span class="icon">📘</span>
+                <span>Facebook</span>
+            </a>
+            
+            <a href="https://t.me/Diyarshaswary" class="social-btn telegram" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+                <span class="icon">✈️</span>
+                <span>Telegram</span>
+            </a>
+            
+            <a href="viber://chat?number=9647835535417" class="social-btn viber" onclick="window.location.href='viber://contact?number=9647835535417'; return false;" aria-label="Viber">
+                <span class="icon">📞</span>
+                <span>Viber</span>
+            </a>
+            
+            <a href="https://api.whatsapp.com/send?phone=9647835535417" class="social-btn whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <span class="icon">💬</span>
+                <span>WhatsApp</span>
+            </a>
+            
+            <a href="mailto:diyarkurdi053@gmail.com?subject=پەیوەندی%20لەگەڵ%20دیار&body=سڵاو%20دیار،%0D%0A%0D%0A" class="social-btn email" target="_blank" rel="noopener noreferrer" aria-label="Email">
+                <span class="icon">📧</span>
+                <span>Email</span>
+            </a>
+        </div>
+        
+        <div class="contact-section">
+            <div class="contact-box">
+                <h3>ژمارە مۆبایل</h3>
+                <a href="tel:+9647835535417" class="contact-link" aria-label="Phone">
+                    +964 783 553 5417
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
